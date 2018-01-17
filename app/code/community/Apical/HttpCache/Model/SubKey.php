@@ -13,7 +13,7 @@ class Apical_HttpCache_Model_SubKey
         $_getVars = $_GET;
         $_postVars = $_POST;
         
-        unset($_GET['form_key'], $_POST['form_key']);
+        unset($_getVars['form_key'], $_postVars['form_key']);
         
         $this->_key = md5(json_encode($_getVars + $_postVars).$_SERVER['HTTP_HOST']);
 
