@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding="utf-8" ?>
+<config>
+    <global>
+        <cache>
+            <request_processors>
+                <rp2>Apical_HttpCache_Model_Processor</rp2>
+            </request_processors>
+        </cache>
+    </global>
+</config>

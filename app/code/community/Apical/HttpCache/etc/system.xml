@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <apical_httpcache module="apical_httpcache">
+            <label>HttpCache</label>
+            <tab>apical</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>0</show_in_website>
+            <show_in_store>0</show_in_store>
+
+            <groups>
+                <httpcache module="apical_httpcache">
+                    <label>HttpCache - Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>0</show_in_website>
+                    <show_in_store>0</show_in_store>
+
+                    <fields>
+                        <cacheable_uri>
+                            <label>URI</label>
+                            <comment>Insert here the URI to be cached, separated by carriage return.</comment>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </cacheable_uri>
+                        <cache_lifetime>
+                            <label>Cache lifetime</label>
+                            <comment>The lifetime of the cache, in seconds. If value is lesser than or equal 0, default (86400) will be used.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </cache_lifetime>
+                    </fields>
+                </httpcache>
+            </groups>
+        </apical_httpcache>
+    </sections>
+</config>

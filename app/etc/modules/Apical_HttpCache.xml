@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Apical_HttpCache>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Apical_HttpCache>
+    </modules>
+</config>

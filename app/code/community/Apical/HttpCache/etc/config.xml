@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Apical_HttpCache>
+            <version>1.0.0</version>
+        </Apical_HttpCache>
+    </modules>
+    <global>
+        <models>
+            <apical_httpcache>
+                <class>Apical_HttpCache_Model</class>
+            </apical_httpcache>
+        </models>
+        <helpers>
+            <apical_httpcache>
+                <class>Apical_HttpCache_Helper</class>
+            </apical_httpcache>
+        </helpers>
+        <events>
+            <http_response_send_before>
+                <observers>
+                    <apical_httpcache_run>
+                        <class>Apical_HttpCache_Model_Observer</class>
+                        <method>isCachable</method>
+                    </apical_httpcache_run>
+                </observers>
+            </http_response_send_before>
+            <adminhtml_cache_refresh_type>
+                <observers>
+                    <apical_httpcache>
+                        <class>Apical_HttpCache_Model_Observer</class>
+                        <type>singleton</type>
+                        <method>cleanCacheType</method>
+                    </apical_httpcache>
+                </observers>
+            </adminhtml_cache_refresh_type>
+        </events>
+        <cache>
+            <types>
+                <apical_httpcache module="apical_httpcache" translate="HTTP Static Cache">
+                    <label>HTTP Static Cache</label>
+                    <description>URI that have been cached statically, defined under Apical -> HttpCache config.</description>
+                    <tags />
+                </apical_httpcache>
+            </types>
+        </cache>
+    </global>
+    <adminhtml>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <apical_httpcache>
+                                            <title>Apical - All</title>
+                                        </apical_httpcache>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+</config>
