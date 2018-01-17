@@ -1,6 +1,6 @@
 # Magento Static Content Cache
 
-Magento cache extension optimized for static content.
+Magento 1.x cache extension optimized for static content.
 
 This extension enables the user to cache static pages with more efficiency than standard cache or FPCs. Given specific URIs, after the first call it will store the results using GET and POST params to generate a unique key.
 
@@ -15,3 +15,7 @@ In System -> Configuration you can set the URIs thatyou wish to cache (without p
 In Cache Management there will be a dedicated item to flush and disable the cache.
 
 ![alt text](https://image.ibb.co/jsBzhR/Untitled1.png)
+
+## Compatibility ##
+
+Tested with Magento 1.9.x version. Compatible with Magento 1.6, 1.7, 1.8 and 1.9.
