@@ -8,7 +8,10 @@ This extension enables the user to cache static pages with more efficiency than 
 
 ## Settings ##
 
-In System -> Configuration you can set the URIs thatyou wish to cache (without params) and a standard cache lifetime
+In System -> Configuration you can set the URIs that you wish to cache (without params) and a standard cache lifetime.
+For instance:
+- */customroute/customcontroller/customaction*
+- */static-page.html*
 
 ![alt text](https://image.ibb.co/bTeD96/Untitled.png)
 
