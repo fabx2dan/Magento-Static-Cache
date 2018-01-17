@@ -14,15 +14,17 @@ class Apical_HttpCache_Model_Processor {
     function __construct() {
         $this->helper = new Apical_HttpCache_Helper_Data();
         
-        // Main cache key
-        $this->cacheKey = new Apical_HttpCache_Model_Key();
-        $this->cacheKey->generate($this->helper->getUri());
-        
-        // Secodary cache key for specific content
-        $this->cacheSubKey = new Apical_HttpCache_Model_SubKey();
-        $this->cacheSubKey->generate();
-        
-        $this->initCache();
+        if($this->helper->isEnabled()) {
+            // Main cache key
+            $this->cacheKey = new Apical_HttpCache_Model_Key();
+            $this->cacheKey->generate($this->helper->getUri());
+
+            // Secodary cache key for specific content
+            $this->cacheSubKey = new Apical_HttpCache_Model_SubKey();
+            $this->cacheSubKey->generate();
+
+            $this->initCache();
+        }
     }
 
     /**
